@@ -1,0 +1,26 @@
+<nav class="navbar navbar-expand-lg navbar-ligh bg-black text-white fixed-top">
+    <div class="container-fluid">
+        <a class="navbar-brand text-white" href="/">
+            <i class="las la-cubes"></i> Cardano Grades
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    a.nav-link(href="/"+userData.role+"/dashboard") [dashboard]
+                </li>
+                <li class="nav-item">
+                    a.nav-link(href="/"+userData.role+"/subjects") [subjects]
+                </li>
+                <li class="nav-item">
+                    a.nav-link(href="/"+userData.role+"/info") [info]
+                </li>
+            </ul>
+        </div>
+        <div class="nav-item-right">
+            <span><span class="user-type"><i class="las la-user-circle"></i>&nbsp;#{userData.role}</span>&nbsp;<span>[#{userData.email}] </span><a class="nav-link-right" href="/logout"> [log-out]</a></span>
+        </div>
+    </div>
+</nav>

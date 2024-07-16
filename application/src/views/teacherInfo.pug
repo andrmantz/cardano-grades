@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cardano Grades | Info</title>
+	include includes/head.pug
+</head>
+<body>
+	include includes/navbar.pug
+	<div class="container mt-5 pt-5">
+		<div class="section-card w-100 mb-5">
+			<form action="" method="post">
+				<div class="row">
+					<h1><i class="las la-user-circle"></i> Info</h1>
+					<hr>
+				</div>
+				<div class="row mt-3">
+					<div class="col">
+						<h5>ID</h5>
+						input(class="info-input form-control" type="text" value=teacherInfo.id disabled)
+					</div>
+					<div class="col">
+						<h5>Address</h5>
+						input(class="info-input form-control" type="text" value=teacherInfo.address disabled)
+					</div>
+				</div>
+				<div class="row mt-3">
+					<div class="col">
+						<h5>Last name</h5>
+						input(class="info-input form-control" type="text" value=teacherInfo.lastName disabled)
+					</div>
+					<div class="col">
+						<h5>First name</h5>
+						input(class="info-input form-control" type="text" value=teacherInfo.firstName disabled)
+					</div>
+				</div>
+				<div class="row mt-3">
+					<div class="col">
+						<h5>Email</h5>
+						input(class="info-input form-control" type="email" name="email" value=teacherInfo.email)
+					</div>
+					<div class="col">
+						<h5>Password</h5>
+						input(class="info-input form-control" type="password" name="password")
+					</div>
+				</div>
+				<div class="row mt-3">
+					<button class="container-button" type="submit"><i class="las la-edit"></i> Update</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</body>

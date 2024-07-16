@@ -1,0 +1,9 @@
+name = "andrmantz/cardano-grades"
+version = "1.0.0"
+license = "Apache-2.0"
+description = ""
+
+[[dependencies]]
+name = "aiken-lang/stdlib"
+version = "1.7.0"
+source = "github"

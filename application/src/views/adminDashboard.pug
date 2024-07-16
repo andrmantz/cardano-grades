@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cardano Grades | Dashboard</title>
+	include includes/head.pug
+</head>
+<body>
+	include includes/navbar.pug
+	<div class="container mt-5">
+		<div class="row pt-5">
+			<div class="section-card w-100">
+				<h1><i class="las la-calendar"></i> Open registrations</h1>
+				<hr>
+				<h4>Select end date:</h4>
+				<form action="/admin/startRegistration" method="post">
+					<input name="closeRegistrationDate" class="form-control" type="date" />
+					<button class="container-button" type="submit"><i class="las la-external-link-square-alt"></i> Open</button>
+				</form>
+			</div>
+		</div>
+		<div class="row pt-5 mb-5">
+			<div class="section-card w-100">
+				<h1><i class="las la-tasks"></i> Change degree subjects</h1>
+				<hr>
+				if Object.keys(subjects).length > 0
+					each subject, id in subjects
+						<div class="form-check">
+							input.form-check-input(type="checkbox" id=id)
+							label(class="form-check-label" for=id) #{subject}
+						</div>
+					<button id="changeBtn" class="container-button" type="button"><i class="las la-edit"></i> Change</button>
+				else
+					p No subjects available
+			</div>
+		</div>
+	</div>
+	<script src="/static/js/adminDashboard.js"></script>
+</body>

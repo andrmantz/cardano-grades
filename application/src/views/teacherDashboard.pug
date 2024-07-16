@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cardano Grades | Dashboard</title>
+	include includes/head.pug
+</head>
+<body>
+	include includes/navbar.pug
+	<div class="container mt-5">
+		<div class="row pt-5 mb-5">
+			<div class="section-card w-100">
+				<h1><i class="las la-list-ol"></i> Assigned subjects</h1>
+				<hr>
+					if subjects.length > 0
+						<div class="subject-container">
+							each subject in subjects
+								<div class="assigned-subject">
+									h4 #{subject.name}
+									a(href="/teacher/subject/"+subject.id+"/addGrade") Grade students
+								</div>
+						</div>
+					else
+						p No subjects available
+			</div>
+		</div>
+	</div>
+</body>

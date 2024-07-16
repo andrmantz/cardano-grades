@@ -1,0 +1,244 @@
+@font-face {
+    font-family: nunito;
+    src: url("/static/font/nunito.ttf");
+}
+
+::-moz-selection {
+    color: #fff;
+    background-color: rgb(86, 33, 151);
+}
+
+::selection {
+    color: #fff;
+    background-color: rgb(86, 33, 151);
+}
+
+body {
+    background-color: rgb(250, 250, 250);
+    font-family: nunito;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #ced4da;
+    box-shadow: none;
+}
+
+.form-control:hover,
+.form-select:hover {
+    border-color: #ced4da;
+}
+
+.form-check-input:checked {
+    background-color: rgb(113, 48, 194) !important;
+    border-color: rgb(113, 48, 194) !important;
+}
+
+.form-check-input:focus {
+    border-color: rgb(113, 48, 194) !important;
+    box-shadow: 0 0 4px 4px rgb(158, 94, 236) !important;
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.login-container {
+    text-align: center;
+    background-color: rgb(228, 228, 228);
+    border: none;
+    padding: 2em;
+    border-radius: 30px;
+    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.3);
+}
+
+.login-container-preppend > span {
+    border-top-left-radius: 30px !important;
+    border-bottom-left-radius: 30px !important;
+}
+
+.login-container-input {
+    margin-left: 5px;
+    border-radius: 30px;
+}
+
+.login-container-input:hover,
+.login-container-input:focus {
+    border: 1px #969696 solid;
+}
+
+.login-container-button {
+    margin-top: 15px !important;
+    width: 100%;
+    border-radius: 30px;
+    border: none;
+    color: #fff;
+    transition-duration: 0.3s;
+    background-color: rgb(76, 30, 133);
+}
+
+.login-container-button:hover {
+    background-color: rgb(86, 33, 151);
+    color: #fff;
+}
+
+.login-container-select {
+    border-radius: 30px !important;
+}
+
+.section-card {
+    background-color: rgb(228, 228, 228);
+    border: none;
+    padding: 2em;
+    border-radius: 30px;
+    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.3);
+}
+
+.nav-link {
+    transition:
+        letter-spacing 0.3s ease,
+        color 0.3s ease;
+    color: #fff;
+}
+
+.nav-link:hover {
+    color: rgb(113, 48, 194);
+    letter-spacing: 1px;
+}
+
+.nav-item-right {
+    padding: 10px;
+    overflow: auto;
+    white-space: nowrap;
+    float: right !important;
+}
+
+.nav-item-right a {
+    display: inline;
+}
+
+.nav-link-right {
+    transition:
+        letter-spacing 0.3s ease,
+        color 0.3s ease;
+    color: #fff;
+    text-decoration: none;
+}
+
+.nav-link-right:hover {
+    color: rgb(113, 48, 194);
+}
+
+.user-type {
+    background-color: rgb(87, 35, 151);
+    border-radius: 30px;
+    padding: 5px;
+}
+
+.transparent-table {
+    background: transparent !important;
+    table-layout: fixed;
+}
+
+.transparent-table th,
+.transparent-table td {
+    background: transparent !important;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.transparent-table th.subject,
+.transparent-table td.subject {
+    width: 80%;
+}
+
+.transparent-table th.grade,
+.transparent-table td.grade {
+    width: 20%;
+    text-align: left;
+}
+
+.container-button {
+    margin-top: 15px !important;
+    width: 100%;
+    padding: 5px;
+    border-radius: 30px;
+    border: none;
+    color: #fff;
+    transition-duration: 0.3s;
+    background-color: rgb(76, 30, 133);
+}
+
+.container-button:disabled {
+    background-color: rgb(126, 113, 143);
+}
+
+.container-button:hover {
+    background-color: rgb(108, 42, 189);
+    color: #fff;
+}
+
+.container-button:disabled:hover {
+    background-color: rgb(126, 113, 143);
+    cursor: not-allowed;
+}
+
+.info-input {
+    width: 100%;
+    border-radius: 30px;
+}
+
+.info-input:disabled {
+    border: var(--bs-border-width) solid var(--bs-border-color) !important;
+}
+
+.info-input:disabled:hover {
+    cursor: not-allowed;
+}
+
+.info-input:hover,
+.info-input:focus {
+    border: 1px #969696 solid;
+}
+
+#qrCode {
+    text-align: center;
+}
+
+.mint-modal {
+    border-radius: 30px !important;
+}
+
+.subject-container {
+    margin: 0 auto;
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.assigned-subject {
+    padding: 15px !important;
+    overflow-wrap: break-word;
+    color: #ffffff;
+    font-size: 1.3em;
+    background-color: rgb(108, 42, 189);
+    border-radius: 30px;
+    padding: 0.2em 0.8em;
+    text-align: left;
+}
+
+.assigned-subject > a {
+    transition-duration: 0.3s;
+    color: #c7c7c7;
+    text-decoration: none;
+}
+
+.assigned-subject > a:hover {
+    text-decoration: underline;
+}
+
+.assigned-subject > span {
+    color: #c7c7c7;
+}

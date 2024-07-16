@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cardano Grades | Dashboard</title>
+	include includes/head.pug
+</head>
+<body>
+	include includes/navbar.pug
+	<div class="container mt-5">
+		<div class="row pt-5 mb-5">
+			<div class="section-card w-100">
+				<h1><i class="las la-list-ol"></i> Passed subjects</h1>
+				if showClaimDegree
+					<p>You have passed all subjects, <a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#mintModal">click here</a> to mint your degree</p>
+				<hr>
+					if grades
+						each semester, semesterNumber in grades
+							h4 Semester #{semesterNumber}
+							table.table.transparent-table
+								thead
+									tr
+										th.subject Subject
+										th.grade Grade
+								tbody
+									each subject in semester
+										tr
+											td.subject= subject.subject
+											td.grade= subject.grade
+					else
+						p No grades available
+			</div>
+		</div>
+	</div>
+	<div id="mintModal" class="modal fade" tabindex="-1" role="dialog">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content mint-modal">
+				<form action="/student/mint" method="post">
+					<div class="modal-body">
+						<h4>Connect to cardano:</h4>
+						<hr>
+						<button class="container-button mb-5" type="button" id="connectBtn"><i class="las la-wallet"></i> Connect with nami wallet</button>
+					</div>
+					<div class="modal-footer">
+						<button class="container-button" type="button" id="mintBtn"><i class="las la-share"></i> Mint</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<script type="module" src="/static/js/studentDashboard.js"></script>
+</body>

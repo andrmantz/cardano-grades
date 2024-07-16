@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Cardano Grades | Login</title>
+    include includes/head.pug
+</head>
+
+<body>
+    <div class="center">
+        <div class="login-container">
+            <h1 class="display-1 m-0"><i class="las la-cubes"></i></h1>
+            <h3 class="m-0">[user authentication]</h3>
+            <hr>
+            <form action="/login" method="post">
+                <div class="form-group input-group mt-2">
+                    <div class="input-group-prepend login-container-preppend">
+                        <span class="input-group-text"><i class="las la-user"></i></span>
+                    </div>
+                    <input class="form-control login-container-input" type="email" name="email" placeholder="email" required>
+                </div>
+                <div class="form-group input-group mt-2">
+                    <div class="input-group-prepend login-container-preppend">
+                        <span class="input-group-text"><i class="las la-key"></i></span>
+                    </div>
+                    <input class="form-control login-container-input" type="password" name="password" placeholder="password" required>
+                </div>
+                <select class="form-select mt-2 login-container-select" name="type">
+                    <option value="student">Student</option>
+                    <option value="teacher">Teacher</option>
+                </select>
+                <button class="btn login-container-button" type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

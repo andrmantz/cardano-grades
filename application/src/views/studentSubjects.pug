@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cardano Grades | Available Subjects</title>
+	include includes/head.pug
+</head>
+<body>
+	include includes/navbar.pug
+	<div class="container mt-5">
+		<div class="row pt-5 mb-5">
+			<div class="section-card w-100">
+				<h1><i class="las la-book"></i> Available subjects</h1>
+				<hr>
+				<p>Select from available subjects to attend:</p>
+					if Object.keys(subjects).length > 0
+						each semesterSubjects, semester in subjects
+							<h4 class="mt-2">Semester #{semester} Subjects</h4>
+							each subject in semesterSubjects
+								<div class="form-check">
+									input.form-check-input(type="checkbox" id=subject)
+									label(class="form-check-label" for=subject) #{subject}
+								</div>
+						<button class="container-button" id="registerBtn" type="button"><i class="las la-plus-circle"></i> Register</button>
+					else
+						p No subjects available
+			</div>
+		</div>
+	</div>
+	<script src="/static/js/studentSubjects.js"></script>
+</body>

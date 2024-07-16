@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cardano Grades | Dashboard</title>
+	include includes/head.pug
+</head>
+<body>
+	include includes/navbar.pug
+	<div class="container mt-5">
+		<div class="row pt-5 mb-5">
+			<div class="section-card w-100">
+				<h1><i class="las la-user-graduate"></i> #{sName}</h1>
+				<h4>Connect to cardano:</h4>
+				<hr>
+				<button class="container-button mb-5" type="button" id="connectBtn"><i class="las la-wallet"></i> Connect with nami wallet</button>
+				<h4>Select students to grade:</h4>
+				<hr>
+					if studentData.length > 0
+						<div class="mb-4">
+							table.table.transparent-table
+								thead
+									tr
+										th ID
+										th First Name
+										th Last Name
+										th Grade
+								tbody
+									each student in studentData
+										tr
+											td= student.id
+											td= student.firstName
+											td= student.lastName
+											td 
+												input(class="info-input form-control" type="number" id="gradeInput" data-id=student.id min="0" max="10" name="grade")
+						<button class="container-button" type="button" id="gradeBtn"><i class="las la-plus-circle"></i> Add grades</button>
+					else
+						p No students found for #{sName}
+			</div>
+		</div>
+	</div>
+	<script type="module" src="/static/js/addGrade.js"></script>
+</body>
