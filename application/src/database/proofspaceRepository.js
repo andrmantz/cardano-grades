@@ -115,6 +115,10 @@ class Proofspace {
     }
 
     issueRegistrationCredentials = async (userDid, subjects, semester) => {
+        if (!process.env.PROOFSPACE) {
+            return;
+        }
+
         const creds = [
             ...this.courseCredential(subjects, semester),
             this.semesterCredential(semester)
@@ -123,17 +127,25 @@ class Proofspace {
     }
 
     issueGradesCredentials = async (grades, subject) => {
+        if (!process.env.PROOFSPACE) {
+            return;
+        }
+
         for (const grade of grades) {
             await this.submit(grade.did, this.gradeCredential(subject, grade.grade));
         }
     }
 
     issueDegreeCredential = async (userDid, school, degree) => {
-        await this.submit(userDid, this.degreeCredential(school, degree));
+        if (process.env.PROOFSPACE) {
+            await this.submit(userDid, this.degreeCredential(school, degree));
+        }
     }
 
     issueUniCredential = async (userDid, studentId, school) => {
-        await this.submit(userDid, this.uniCredential(school, studentId));
+        if (process.env.PROOFSPACE) {
+            await this.submit(userDid, this.uniCredential(school, studentId));
+        }
     }
 }
 
